@@ -9,7 +9,7 @@ L'application permet de comparer les prix des carburants entre plusieurs station
 - **Filtrage** : type de carburant, rayon (en km), date de mise à jour des prix
 - **Affichage** : liste des stations avec prix, adresse, distance et date de mise à jour
 
-## Fonctionnalités technique
+## Stack technique
 - **Kotlin**
 - **Jetpack Compose (Material 3)**
 - **Architecture** : MVVM (ViewModel + StateFlow)
@@ -38,11 +38,11 @@ L'application permet de comparer les prix des carburants entre plusieurs station
 - UserPreferences : DataStore.
 
 ### Modèles
-- data/model/* : modèles partagés (FavoriteCity, GeocodedCity).
-- ui/* : modèles d'affichage (StationUi).
+- data/model : modèles partagés (FavoriteCity, GeocodedCity).
+- ui : modèles d'affichage (StationUi).
 
 ## Flux de données (data flow)
-1. L'utilisateur choisit une ville (vial la recherche ou les favoris).
+1. L'utilisateur choisit une ville (via la recherche ou les favoris).
 2. La ville est persistée dans UserPreferences.
 3. HomeViewModel observe les préférences (ville + filtres) et relance un chargement.
 4. PrixCarburantsRepository appelle l'API.
